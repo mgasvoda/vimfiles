@@ -30,8 +30,13 @@ set shiftround
 
 " Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if exists("g:custom_vundle_dir")
+    let &rtp=&rtp.','.g:custom_vundle_dir."/vundle"
+    call vundle#rc(g:custom_vundle_dir)
+else
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+endif
 
 Bundle 'gmarik/vundle'
 Bundle 'OceanBlack256'
