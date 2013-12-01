@@ -46,6 +46,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'buftabs'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'Syntastic'
+Bundle 'VimOutliner'
+Bundle 'UltiSnips'
 
 " File and omnicomplete
 filetype indent on
@@ -73,6 +76,7 @@ highlight! link Spellbad Search
 " Plugins
 let NERDTreeQuitOnOpen = 1
 let g:neocomplcache_enable_at_startup = 1
+let g:syntastic_enable_signs=0
 
 " Remapping
 nmap <silent><leader>w :w<cr>
