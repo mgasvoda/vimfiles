@@ -12,7 +12,7 @@ set nowrap
 set autoread
 set directory=~/.vim/backup,/tmp
 set undodir=~/.vim/undo,/tmp
-set colorcolumn=+1
+"set colorcolumn=+1
 set autochdir
 set cmdheight=2 "Avoid hit-enter
 set undofile
@@ -49,6 +49,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'Syntastic'
 Bundle 'VimOutliner'
 Bundle 'UltiSnips'
+Bundle 'vimroom.vim'
 
 " File and omnicomplete
 filetype indent on
@@ -75,7 +76,7 @@ highlight! link Spellbad Search
 
 " Plugins
 let NERDTreeQuitOnOpen = 1
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
 
 " Remapping
