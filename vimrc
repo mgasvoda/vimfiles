@@ -34,19 +34,20 @@ endif
 
 Bundle 'OceanBlack256'
 Bundle 'Shougo/neocomplcache.vim'
-Bundle 'Syntastic'
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'Tabular'
-Bundle 'VimOutliner'
 Bundle 'buftabs'
 Bundle 'gmarik/vundle'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'junegunn/goyo.vim'
 Bundle 'oceanblack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'snipMate'
+Bundle 'scrooloose/syntastic'
 Bundle 'snipmate-snippets'
 Bundle 'tpope/vim-sensible'
-Bundle 'vimroom.vim'
+Bundle 'vimoutliner/vimoutliner'
 
 " File and omnicomplete
 "au Filetype python syntax keyword pythonDecorator True False self None
@@ -74,8 +75,16 @@ highlight! link WildMenu Search
 
 " Plugins
 let NERDTreeQuitOnOpen = 1
-"let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
 " Remapping
 nmap <silent><leader>w :w<cr>
