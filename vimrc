@@ -35,6 +35,8 @@ endif
 Bundle 'OceanBlack256'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
+Bundle 'honza/vim-snippets'
 Bundle 'Tabular'
 Bundle 'buftabs'
 Bundle 'gmarik/vundle'
@@ -44,7 +46,6 @@ Bundle 'oceanblack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'snipmate-snippets'
 Bundle 'tpope/vim-sensible'
 Bundle 'vimoutliner/vimoutliner'
 
@@ -76,6 +77,8 @@ highlight! link WildMenu Search
 let NERDTreeQuitOnOpen = 1
 let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
+let g:goyo_width = 82
+
 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
