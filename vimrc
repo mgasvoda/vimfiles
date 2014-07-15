@@ -26,28 +26,31 @@ set softtabstop=4
 filetype off
 if exists("g:custom_vundle_dir")
     let &rtp=&rtp.','.g:custom_vundle_dir."/vundle"
-    call vundle#rc(g:custom_vundle_dir)
+    call vundle#begin(g:custom_vundle_dir)
 else
     set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
+    call vundle#begin()
 endif
 
-Bundle 'OceanBlack256'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-Bundle 'honza/vim-snippets'
-Bundle 'Tabular'
-Bundle 'buftabs'
-Bundle 'gmarik/vundle'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'junegunn/goyo.vim'
-Bundle 'oceanblack.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-sensible'
-Bundle 'vimoutliner/vimoutliner'
+Plugin 'OceanBlack256'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'honza/vim-snippets'
+Plugin 'Tabular'
+Plugin 'buftabs'
+Plugin 'gmarik/vundle'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'junegunn/goyo.vim'
+Plugin 'oceanblack.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-sensible'
+Plugin 'vimoutliner/vimoutliner'
+
+call vundle#end()
+filetype plugin indent on
 
 " File and omnicomplete
 "au Filetype python syntax keyword pythonDecorator True False self None
