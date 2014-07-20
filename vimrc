@@ -15,6 +15,7 @@ set cmdheight=2 "Avoid hit-enter
 set undofile
 set gdefault
 set grepprg=ack
+set foldlevel=999
 
 " Tab
 set expandtab
@@ -30,6 +31,7 @@ if exists("g:custom_vundle_dir")
 else
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
+    "set rtp+=~/.vim/bundle/
 endif
 
 Bundle 'OceanBlack256'
@@ -48,6 +50,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-sensible'
 Bundle 'vimoutliner/vimoutliner'
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
 
 " File and omnicomplete
 "au Filetype python syntax keyword pythonDecorator True False self None
@@ -77,7 +81,9 @@ highlight! link WildMenu Search
 let NERDTreeQuitOnOpen = 1
 let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
-let g:goyo_width = 82
+let g:goyo_width = 90
+let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#formatting#mode = "ha"
 
 
 " SuperTab like snippets behavior.
@@ -95,10 +101,12 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Remapping
-nmap <silent><leader>w :w<cr>
-nmap <silent><leader>c :bd<cr>
+nmap <leader>w :w<cr>
+nmap <leader>c :bd<cr>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
-nmap <silent><leader>e :NERDTreeToggle<CR>
-nmap <silent><leader>t :TlistToggle<cr>
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>t :TlistToggle<cr>
+nmap <silent> <C-_> :nohlsearch<CR>
+
