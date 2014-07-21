@@ -8,8 +8,13 @@ set noerrorbells
 set hidden
 set nowrap
 set autoread
-set directory=~/.vim/backup,/tmp
-set undodir=~/.vim/undo,/tmp
+if has("win32")
+    set directory=$HOME\vimfiles\backup,c:\temp
+    set undodir=$HOME\vimfiles\backup,c:\temp
+else
+    set directory=~/.vim/backup,/tmp
+    set undodir=~/.vim/undo,/tmp
+endif
 set autochdir
 set cmdheight=2 "Avoid hit-enter
 set undofile
@@ -24,9 +29,9 @@ set softtabstop=4
 
 " Vundle
 filetype off
-if exists("g:custom_vundle_dir")
-    let &rtp=&rtp.','.g:custom_vundle_dir."/vundle"
-    call vundle#begin(g:custom_vundle_dir)
+if has("win32")
+    let &rtp=&rtp.','.$HOME."/vimfiles/bundle/vundle"
+    call vundle#begin($HOME."/vimfiles/bundle/vundle")
 else
     set rtp+=~/.vim/bundle/vundle/
     call vundle#begin()
@@ -103,5 +108,5 @@ nmap <silent><leader>c :bd<cr>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
-nmap <silent><leader>e :NERDTreeToggle<CR>
+nmap <silent><leader>e :NERDTreeToggle %<CR>
 nmap <silent><leader>t :TlistToggle<cr>
