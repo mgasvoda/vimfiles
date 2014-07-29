@@ -113,6 +113,6 @@ nmap <leader>c :bd<cr>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
-nmap <silent><leader>e :NERDTreeToggle %<CR>
+nmap <silent><leader>e :NERDTreeToggle %:p:h<CR>
 nmap <silent><leader>t :TlistToggle<cr>
 nmap <silent> <C-_> :nohlsearch<CR>
