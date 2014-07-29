@@ -40,9 +40,6 @@ endif
 
 Plugin 'OceanBlack256'
 Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'honza/vim-snippets'
 Plugin 'Tabular'
 Plugin 'buftabs'
 Plugin 'gmarik/vundle'
@@ -91,21 +88,6 @@ let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#formatting#mode = "ha"
-
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Remapping
 nmap <leader>w :w<cr>
