@@ -53,6 +53,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -95,6 +96,13 @@ nmap <leader>c :bd<cr>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
-nmap <silent><leader>e :NERDTreeToggle %:p:h<CR>
+nmap <silent><leader>e :NERDTree %:p:h<CR>
 nmap <silent><leader>t :TlistToggle<cr>
+if has("win32")
+    nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr> :source $HOME/vimfiles/gvimrc <cr>
+else
+    nmap <silent><leader>rr :source ~/.vimrc <cr> :source ~/.gvimrc <cr>
+endif
 nmap <silent> <C-_> :nohlsearch<CR>
+nmap <silent><leader><leader><leader> :nohlsearch<CR>
+
