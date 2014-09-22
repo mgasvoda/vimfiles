@@ -88,7 +88,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#formatting#mode = "ha"
+let g:pandoc#formatting#mode = "h"
 let g:neocomplcache_disable_auto_complete = 1
 
 
