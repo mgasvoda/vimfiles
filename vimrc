@@ -54,6 +54,7 @@ Plugin 'vimoutliner/vimoutliner'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-fugitive'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
 filetype plugin indent on
@@ -106,5 +107,5 @@ else
     nmap <silent><leader>rr :source ~/.vimrc <cr> :source ~/.gvimrc <cr>
 endif
 nmap <silent> <C-_> :nohlsearch<CR>
+nmap <silent><leader>x "+
 nmap <silent><leader><leader><leader> :nohlsearch<CR>
-
