@@ -47,7 +47,6 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'junegunn/goyo.vim'
 Plugin 'oceanblack.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-sensible'
 Plugin 'vimoutliner/vimoutliner'
@@ -84,7 +83,6 @@ highlight! link Spellbad Search
 highlight! link WildMenu Search
 
 " Plugins
-let NERDTreeQuitOnOpen = 1
 let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
@@ -99,7 +97,7 @@ nmap <leader>c :bd<cr>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
-nmap <silent><leader>e :NERDTree %:p:h<CR>
+nmap <silent><leader>e :Explore<CR>
 nmap <silent><leader>t :TlistToggle<cr>
 if has("win32")
     nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr> :source $HOME/vimfiles/gvimrc <cr>
