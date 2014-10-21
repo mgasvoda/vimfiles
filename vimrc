@@ -15,7 +15,6 @@ else
     set directory=~/.vim/backup,/tmp
     set undodir=~/.vim/undo,/tmp
 endif
-set autochdir
 set cmdheight=2 "Avoid hit-enter
 set undofile
 set gdefault
