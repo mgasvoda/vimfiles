@@ -16,4 +16,3 @@ highlight! link ModeMsg MoreMsg
 highlight Pmenu ctermbg=238 gui=bold
 highlight! link Pmenu Search
 highlight! link ColorColumn Search
-cd ~
