@@ -53,6 +53,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-vinegar'
 
 call vundle#end()
 filetype plugin indent on
