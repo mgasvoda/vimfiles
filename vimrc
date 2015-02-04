@@ -31,29 +31,32 @@ set softtabstop=4
 filetype off
 if has("win32")
     let &rtp=&rtp.','.$HOME."/vimfiles/bundle/vundle"
-    call vundle#begin($HOME."/vimfiles/bundle/vundle")
+    call vundle#begin($HOME."/vimfiles/bundle")
 else
     set rtp+=~/.vim/bundle/vundle/
     call vundle#begin()
 endif
 
-Plugin 'OceanBlack256'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Tabular'
 Plugin 'buftabs'
+Plugin 'oceanblack.vim'
+Plugin 'OceanBlack256'
+Plugin 'Tabular'
+
+Plugin 'derekwyatt/vim-scala'
 Plugin 'gmarik/vundle'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'junegunn/goyo.vim'
-Plugin 'oceanblack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
-Plugin 'vimoutliner/vimoutliner'
+Plugin 'tpope/vim-vinegar'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'tpope/vim-fugitive'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-vinegar'
+Plugin 'vimoutliner/vimoutliner'
 
 call vundle#end()
 filetype plugin indent on
@@ -88,7 +91,7 @@ let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#formatting#mode = "h"
-let g:neocomplcache_disable_auto_complete = 1
+"let g:neocomplcache_disable_auto_complete = 1
 
 
 " Remapping
