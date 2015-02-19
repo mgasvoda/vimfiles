@@ -67,6 +67,7 @@ set cot=menu
 
 " File
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Search
 set hlsearch
@@ -92,6 +93,13 @@ let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#formatting#mode = "h"
 "let g:neocomplcache_disable_auto_complete = 1
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
 
 " Remapping
