@@ -20,6 +20,7 @@ set undofile
 set gdefault
 set grepprg=ack
 set foldlevel=999
+set number
 
 " Tab
 set expandtab
