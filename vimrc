@@ -66,7 +66,7 @@ filetype plugin indent on
 set cot=menu
 
 " File
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Search
@@ -91,7 +91,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#formatting#mode = "h"
+"let g:pandoc#formatting#mode = "h"
 "let g:neocomplcache_disable_auto_complete = 1
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
