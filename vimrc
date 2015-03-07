@@ -57,7 +57,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vimoutliner/vimoutliner'
 
 call vundle#end()
 filetype plugin indent on
