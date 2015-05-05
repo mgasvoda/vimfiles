@@ -70,6 +70,13 @@ set cot=menu
 autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
 autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Windows SSH
+if has("win32")
+    let g:netrw_scp_cmd = 'c:\"Program Files (x86)"\PuTTY\pscp.exe -q -batch'
+    let g:netrw_sftp_cmd = '"c:\"Program Files (x86)"\PuTTY\psftp.exe'
+    let g:netrw_silet = 1
+endif
+
 " Search
 set hlsearch
 set ignorecase
@@ -92,7 +99,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
-"let g:pandoc#formatting#mode = "h"
+let NERDSpaceDelims = 1
 "let g:neocomplcache_disable_auto_complete = 1
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
