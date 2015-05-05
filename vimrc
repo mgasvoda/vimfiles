@@ -52,6 +52,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-vinegar'
@@ -67,7 +68,8 @@ set cot=menu
 
 " File
 autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
-autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType python autocmd BufWritePre <buffer> :kz | %! autopep8 -aa - | docformatter -
+autocmd FileType python autocmd BufWritePost <buffer> :execute "normal 'z" | delm z
 
 " Search
 set hlsearch
@@ -88,6 +90,9 @@ highlight! link WildMenu Search
 
 " Plugins
 let g:neocomplcache_enable_at_startup = 1
+if has("unix")
+    let g:neocomplcache_temporary_dir = "/tmp/neocomplcache"
+endif
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
