@@ -91,7 +91,7 @@ highlight! link WildMenu Search
 " Plugins
 let g:neocomplcache_enable_at_startup = 1
 if has("unix")
-    let g:neocomplcache_temporary_dir = "/tmp/neocomplcache"
+    let g:neocomplcache_temporary_dir = "~/.cache/neocomplcache"
 endif
 let g:syntastic_enable_signs=0
 let g:goyo_width = 90
