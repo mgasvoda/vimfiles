@@ -145,13 +145,12 @@ nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
 nmap <silent><leader>e :Explore<CR>
-nmap <silent><leader>t :TlistToggle<cr>
 if has("win32")
     nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr> :source $HOME/vimfiles/gvimrc <cr>
 else
     nmap <silent><leader>rr :source ~/.vimrc <cr> :source ~/.gvimrc <cr>
 endif
-nmap <silent> <C-_> :nohlsearch<CR>
 nmap <silent><leader>x "+
+vmap <silent><leader>k "+
 nmap <silent><leader><leader><leader> :nohlsearch<CR>
 noremap - <esc>
