@@ -63,13 +63,37 @@ call vundle#end()
 filetype plugin indent on
 
 " File and omnicomplete
-"au Filetype python syntax keyword pythonDecorator True False self None
 set cot=menu
 
 " File
-autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
-autocmd FileType python autocmd BufWritePre <buffer> :kz | %! autopep8 -aa - | docformatter -
-autocmd FileType python autocmd BufWritePost <buffer> :execute "normal 'z" | delm z
+function Clean_python()
+    kz
+    %! autopep8 -aa - 
+    execute "normal `z"
+    delm z
+endfunction
+
+" augroup filetype_python
+    " au!
+    " autocmd FileType python autocmd BufWritePre <buffer> call Clean_python()
+" augroup END
+
+
+function Clean_markdown()
+    kz
+    redir @A
+    %! pandoc --standalone -t markdown -f markdown --atx-headers --no-wrap
+    redir END
+    execute "normal `z"
+    delm z
+endfunction
+
+augroup filetyle_markdown
+    au!
+    " autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
+    " autocmd Filetype markdown autocmd BufWritePre <buffer> call Clean_markdown()
+augroup END
+
 
 " Windows SSH
 if has("win32")
@@ -121,12 +145,12 @@ nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
 nmap ; :
 nmap <silent><leader>e :Explore<CR>
-nmap <silent><leader>t :TlistToggle<cr>
 if has("win32")
     nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr> :source $HOME/vimfiles/gvimrc <cr>
 else
     nmap <silent><leader>rr :source ~/.vimrc <cr> :source ~/.gvimrc <cr>
 endif
-nmap <silent> <C-_> :nohlsearch<CR>
 nmap <silent><leader>x "+
+vmap <silent><leader>k "+
 nmap <silent><leader><leader><leader> :nohlsearch<CR>
+noremap - <esc>
