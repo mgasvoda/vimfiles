@@ -8,19 +8,19 @@ set noerrorbells
 set hidden
 set nowrap
 set autoread
+set cmdheight=2 "Avoid hit-enter
+set undofile
+set gdefault
+set foldlevel=999
+set number
+
 if has("win32")
-    set directory=$HOME\vimfiles\backup,c:\temp
-    set undodir=$HOME\vimfiles\backup,c:\temp
+    set directory=$HOME\vimfiles\backup,$TEMP
+    set undodir=$HOME\vimfiles\backup,$TEMP
 else
     set directory=~/.vim/backup,/tmp
     set undodir=~/.vim/undo,/tmp
 endif
-set cmdheight=2 "Avoid hit-enter
-set undofile
-set gdefault
-set grepprg=ack
-set foldlevel=999
-set number
 
 " Tab
 set expandtab
@@ -38,24 +38,25 @@ else
     call vundle#begin()
 endif
 
-Plugin 'buftabs'
+
+Plugin 'gmarik/vundle'
+
+Plugin 'tpope/vim-sensible'
 Plugin 'oceanblack.vim'
 Plugin 'OceanBlack256'
-Plugin 'Tabular'
 
-Plugin 'derekwyatt/vim-scala'
-Plugin 'gmarik/vundle'
-Plugin 'hynek/vim-python-pep8-indent'
+
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'godlygeek/tabular'
 Plugin 'junegunn/goyo.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-vinegar'
+
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -64,43 +65,7 @@ filetype plugin indent on
 
 " File and omnicomplete
 set cot=menu
-
-" File
-function Clean_python()
-    kz
-    %! autopep8 -aa - 
-    execute "normal `z"
-    delm z
-endfunction
-
-" augroup filetype_python
-    " au!
-    " autocmd FileType python autocmd BufWritePre <buffer> call Clean_python()
-" augroup END
-
-
-function Clean_markdown()
-    kz
-    redir @A
-    %! pandoc --standalone -t markdown -f markdown --atx-headers --no-wrap
-    redir END
-    execute "normal `z"
-    delm z
-endfunction
-
-augroup filetyle_markdown
-    au!
-    " autocmd BufNewFile,BufReadPost,BufEnter *.md set filetype=markdown
-    " autocmd Filetype markdown autocmd BufWritePre <buffer> call Clean_markdown()
-augroup END
-
-
-" Windows SSH
-if has("win32")
-    let g:netrw_scp_cmd = 'c:\"Program Files (x86)"\PuTTY\pscp.exe -q -batch'
-    let g:netrw_sftp_cmd = '"c:\"Program Files (x86)"\PuTTY\psftp.exe'
-    let g:netrw_silet = 1
-endif
+" au BufWrite * :Autoformat
 
 " Search
 set hlsearch
@@ -120,22 +85,10 @@ highlight! link Spellbad Search
 highlight! link WildMenu Search
 
 " Plugins
-let g:neocomplcache_enable_at_startup = 1
-if has("unix")
-    let g:neocomplcache_temporary_dir = "~/.cache/neocomplcache"
-endif
+let g:neocomplete#enable_at_startup = 1
 let g:syntastic_enable_signs=0
-let g:goyo_width = 90
 let g:pandoc#syntax#conceal#use = 0
 let NERDSpaceDelims = 1
-"let g:neocomplcache_disable_auto_complete = 1
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
 
 
 " Remapping
