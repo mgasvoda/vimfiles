@@ -7,7 +7,10 @@ set guioptions-=l
 set guicursor+=a:blinkon0
 if has("win32")
     set guifont=Consolas:h11
+else
+    set guifont=Inconsolata\ 12
 endif
+
 " Appearance
 set background=dark
 colorscheme oceanblack
