@@ -146,9 +146,9 @@ nmap <silent><C-L> :bn<CR>
 nmap ; :
 nmap <silent><leader>e :Explore<CR>
 if has("win32")
-    nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr> :source $HOME/vimfiles/gvimrc <cr>
+    nmap <silent><leader>rr :source $HOME/vimfiles/vimrc <cr>
 else
-    nmap <silent><leader>rr :source ~/.vimrc <cr> :source ~/.gvimrc <cr>
+    nmap <silent><leader>rr :source ~/.vimrc <cr>
 endif
 nmap <silent><leader>x "+
 vmap <silent><leader>k "+
