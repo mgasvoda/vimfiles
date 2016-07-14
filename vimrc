@@ -16,9 +16,11 @@ set number
 
 if has("win32")
     set directory=$HOME\vimfiles\backup,$TEMP
+    set backupdir=$HOME\vimfiles\backup,$TEMP
     set undodir=$HOME\vimfiles\backup,$TEMP
 else
     set directory=~/.vim/backup,/tmp
+    set backupdir=~/.vim/backup,/tmp
     set undodir=~/.vim/undo,/tmp
 endif
 
