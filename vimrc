@@ -65,7 +65,7 @@ filetype plugin indent on
 
 " File and omnicomplete
 set cot=menu
-" au BufWrite * :Autoformat
+au BufWrite * :Autoformat
 
 " Search
 set hlsearch
@@ -90,6 +90,9 @@ let g:syntastic_enable_signs=0
 let g:pandoc#syntax#conceal#use = 0
 let NERDSpaceDelims = 1
 
+let g:formatdef_pandoc = '"pandoc -t markdown --standalone --wrap=none --atx-headers --reference-links"'
+let g:formatters_pandoc = ['pandoc']
+
 
 " Remapping
 nmap <leader>w :w<cr>
@@ -104,6 +107,5 @@ else
     nmap <silent><leader>rr :source ~/.vimrc <cr>
 endif
 nmap <silent><leader>x "+
-vmap <silent><leader>k "+
+vmap <silent><leader>x "+
 nmap <silent><leader><leader><leader> :nohlsearch<CR>
-noremap - <esc>
