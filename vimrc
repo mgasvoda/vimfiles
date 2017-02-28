@@ -89,7 +89,7 @@ highlight! link WildMenu Search
 let g:syntastic_enable_signs=0
 let g:pandoc#syntax#conceal#use = 0
 
-let g:formatdef_pandoc = '"pandoc -t markdown --standalone --wrap=none --atx-headers --reference-links"'
+let g:formatdef_pandoc = '"pandoc -t markdown --standalone --atx-headers"'
 let g:formatters_pandoc = ['pandoc']
 
 
