@@ -47,9 +47,8 @@ Plugin 'tpope/vim-sensible'
 Plugin 'oceanblack.vim'
 Plugin 'OceanBlack256'
 
-
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'ajh17/vimcompletesme'
 Plugin 'godlygeek/tabular'
 Plugin 'junegunn/goyo.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -87,10 +86,8 @@ highlight! link Spellbad Search
 highlight! link WildMenu Search
 
 " Plugins
-let g:neocomplete#enable_at_startup = 1
 let g:syntastic_enable_signs=0
 let g:pandoc#syntax#conceal#use = 0
-let NERDSpaceDelims = 1
 
 let g:formatdef_pandoc = '"pandoc -t markdown --standalone --wrap=none --atx-headers --reference-links"'
 let g:formatters_pandoc = ['pandoc']
