@@ -51,13 +51,13 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'godlygeek/tabular'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'kchmck/vim-coffee-script'
+Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
@@ -91,6 +91,9 @@ let g:pandoc#syntax#conceal#use = 0
 
 let g:formatdef_pandoc = '"pandoc -t markdown --standalone --atx-headers"'
 let g:formatters_pandoc = ['pandoc']
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 
 " Remapping
