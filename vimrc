@@ -13,6 +13,10 @@ set undofile
 set gdefault
 set foldlevel=999
 set number
+set foldmethod=indent
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 if has("win32")
     set directory=$HOME\vimfiles\backup,$TEMP
@@ -44,10 +48,13 @@ endif
 Plugin 'gmarik/vundle'
 
 Plugin 'tpope/vim-sensible'
-Plugin 'oceanblack.vim'
-Plugin 'OceanBlack256'
+Plugin 'rakr/vim-one'
 
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'ajh17/vimcompletesme'
 Plugin 'godlygeek/tabular'
 Plugin 'junegunn/goyo.vim'
@@ -76,7 +83,7 @@ set smartcase
 " Appearance
 syntax enable
 set background=dark
-colorscheme oceanblack256
+colorscheme one
 " Get rid of ugly Green insert
 highlight! link ModeMsg MoreMsg
 highlight Pmenu ctermbg=238 gui=bold
@@ -98,9 +105,11 @@ autocmd! User GoyoLeave Limelight!
 
 " Remapping
 nmap <leader>w :w<cr>
-nmap <leader>c :bd<cr>
+nmap <leader>c :BD<cr>
+nmap <silent><C-X> :NERDTreeToggle<CR>
 nmap <silent><C-H> :bp<CR>
 nmap <silent><C-L> :bn<CR>
+nmap <leader>t <C-W><C-W><CR>
 nmap ; :
 nmap <silent><leader>e :Explore<CR>
 if has("win32")

@@ -13,7 +13,7 @@ endif
 
 " Appearance
 set background=dark
-colorscheme oceanblack
+colorscheme one
 " Get rid of ugly Green insert
 highlight! link ModeMsg MoreMsg
 highlight Pmenu ctermbg=238 gui=bold
